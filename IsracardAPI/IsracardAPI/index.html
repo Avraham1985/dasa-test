@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>isracard-project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="fonts/main.css" rel="stylesheet" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="Scripts/Controllers/mainController.js"></script>
+</head>
+<body ng-app="myApp">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Isracard-Project</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container" ng-controller="myCtrl">
+        <div class="row">
+            <p class="main-title">looking for something ?</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                <input id="txtSearch" type="text" ng-keyup="$event.keyCode === 13 && search()" placeholder="search..." class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="button" ng-click="getBookItems()" id="searchBtn" class="btn btn-info" value="show items" />
+            <input ng-click="search()" type="button" id="searchBtn" class="btn btn-info" value="search" />
+        </div>
+
+
+        <div id="main-section" class="row">
+            <div ng-repeat="x in items">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="item-div">
+                        <p class="item-name">{{x.name}}</p>
+                        <img ng-src="{{x.owner.avatar_url}}" alt="Description" class="img-responsive" />
+                        <input ng-click="bookMe(x)" type="button" class="btn btn-defult itemBtn" value="book me" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="book-section" class="row container hidden">
+            <div class="row">
+                <div ng-repeat="x in sessionItems">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="item-div">
+                            <p class="item-name">{{x.name}}</p>
+                            <img ng-src="{{x.avatar_url}}" alt="Description" class="img-responsive" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

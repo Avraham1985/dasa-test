@@ -1,0 +1,45 @@
+﻿.container.ng-scope {
+    margin-top: 6em;
+}
+
+p.main-title {
+    font-size: 2em;
+    margin-left: 0.5em;
+}
+
+input#searchBtn {
+    margin: 1em 0em 1em 1em;
+}
+input.itemBtn {
+    background-color: #ead199;
+    -webkit-appearance: button;
+    cursor: pointer;
+    position: relative;
+    left: 6em;
+    margin-top: 1em;
+    color: black;
+}
+img.img-responsive {
+    max-height: 200px;
+    position: relative;
+    left: 5em;
+}
+p.item-name.ng-binding {
+    font-weight: bold;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #5f5d5d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+    p.item-name.ng-binding:hover {
+        color: #acc7c7;
+    }
+
+.item-div {
+    border: 1px solid gray;
+    margin: 0em 0em 2em 0em;
+}
